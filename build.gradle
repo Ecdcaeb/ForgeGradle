@@ -366,3 +366,29 @@ def getGitHash() {
     process.waitFor()
     return '-' + (process.exitValue() ? 'unknown' : process.text.trim())
 }
+
+publishing {
+    repositories {
+        if (project.hasProperty("publish-username")) {
+            maven {
+                url project.hasProperty("publish-maven")
+                credentials {
+                    username project.hasProperty("publish-username") ? project.getProperty("publish-username") : null
+                    password project.hasProperty("publish-password") ? project.getProperty("publish-password") : null
+                }
+            }
+        }
+        maven {
+            url file('build/maven').toURI().toString()
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            groupId = project.group
+            artifactId = project.archivesBaseName
+            version = project.version
+            artifact jar
+            artifact javadocJar
+        }
+    }
+}
