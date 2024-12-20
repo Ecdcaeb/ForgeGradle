@@ -258,16 +258,12 @@ public abstract class BasePlugin<K extends BaseExtension> implements Plugin<Proj
                 "ext", "zip"
                 ));
 
-        LOGGER.warn("WARNING: You are using an unsupported version of ForgeGradle.");
-        LOGGER.warn("Please consider upgrading to ForgeGradle 5 and helping in the efforts to get old versions working on the modern toolchain.");
-        LOGGER.warn("See https://gist.github.com/TheCurle/fe7ad3ede188cbdd15c235cc75d52d4a for more info on contributing.");
-
         if (!displayBanner)
             return;
 
         LOGGER.lifecycle("#################################################");
-        LOGGER.lifecycle("         ForgeGradle {}        ", this.getVersionString());
-        LOGGER.lifecycle("  https://github.com/MinecraftForge/ForgeGradle  ");
+        LOGGER.lifecycle("         ForgeGradle - Unoffical {}        ", this.getVersionString());
+        LOGGER.lifecycle("  https://github.com/Ecdcaeb/ForgeGradle/tree/FG_2.4  ");
         LOGGER.lifecycle("#################################################");
         LOGGER.lifecycle("                 Powered by MCP                  ");
         LOGGER.lifecycle("             http://modcoderpack.com             ");
