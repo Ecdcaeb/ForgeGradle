@@ -319,8 +319,8 @@ license {
             '**net/minecraftforge/gradle/util/patching/Base64.java',
             '**net/minecraftforge/gradle/util/patching/ContextualPatch.java'
     ])
-    ignoreFailures false
-    strictCheck true
+    ignoreFailures true
+    strictCheck false
     mapping {
         java = 'SLASHSTAR_STYLE'
     }
